@@ -5,6 +5,10 @@
  * @return {number}
  */
 var lengthOfLongestSubstring = function (s) {
+
+  // get all the possible substrings that don't contain repeating characters
+  // keep track of the longest substring while they are being calculated to prevent an extra loop
+
   //console.log(`checking string: {${s}}`);
   let longestLength = 0;
 
