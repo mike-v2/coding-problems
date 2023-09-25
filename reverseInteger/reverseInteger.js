@@ -7,7 +7,7 @@
 var reverse = function (x) {
 
   // shave off last digit of x using mod and division by 10
-  // keep track of number of digits in new number so we can calculate the number being added
+  // we will add this digit to the ones place of the new number by multiplying by 10 and adding new digit
   // before adding, check if the new number would be outside 32-bit integer range
 
   const INT_MIN = -1 * Math.pow(2, 31);
