@@ -8,8 +8,8 @@ var threeSum = function (nums) {
 
   // sort array, then loop through and set anchor to current index
   // for each index anchor, find two values that sum to anchor
-  // choose first value just higher than anchor, and second value to be greatest number
-  // increment first value and decrement second value until sum is reached
+  // choose second value just higher than anchor, and third value to be greatest number
+  // increment second value and decrement third value until sum is reached
 
   const answer = [];
   nums = nums.sort((a, b) => a - b);
@@ -17,28 +17,28 @@ var threeSum = function (nums) {
   for (let i = 0; i < nums.length - 2; i++) {
     //avoid duplicates
     if (i === 0 || nums[i] !== nums[i - 1]) {
-      let first = i + 1;
-      let second = nums.length - 1;
+      let second = i + 1;
+      let third = nums.length - 1;
 
-      while (first < second) {
-        const sum = nums[i] + nums[first] + nums[second];
+      while (second < third) {
+        const sum = nums[i] + nums[second] + nums[third];
         if (sum == 0) {
-          answer.push([nums[i], nums[first], nums[second]]);
+          answer.push([nums[i], nums[second], nums[third]]);
 
           // avoid duplicates
-          while (nums[first] == nums[first + 1]) {
-            first++;
+          while (nums[second] == nums[second + 1]) {
+            second++;
           }
-          while (nums[second] == nums[second - 1]) {
-            second--;
+          while (nums[third] == nums[third - 1]) {
+            third--;
           }
 
-          first++;
-          second--;
+          second++;
+          third--;
         } else if (sum > 0) {
-          second--;
+          third--;
         } else {
-          first++;
+          second++;
         }
       }
     }
