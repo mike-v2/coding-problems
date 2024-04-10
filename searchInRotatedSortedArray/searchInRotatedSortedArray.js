@@ -7,10 +7,10 @@
  */
 var search = function(nums, target) {
     
-    // perform search by continuously splitting the array in half (O(log n)) (instead of sequential search (O(n)))
-    // 1. init greatest value as array[0], subarray as array
+    // perform search by continuously splitting the array in half (O(log n)) instead of sequential search (O(n))
+    // 1. init subarray as array
     // 2. find middle value of subarray
-    // 3. decide whether to take left side or right side of subarray
+    // 3. decide whether to take left side or right side of subarray as new subarray
     // if rotated, if greater than first or less than middle, take left, otherwise take right
     // if not rotated, if target is between middle and start value, take left, otherwise take right
 
